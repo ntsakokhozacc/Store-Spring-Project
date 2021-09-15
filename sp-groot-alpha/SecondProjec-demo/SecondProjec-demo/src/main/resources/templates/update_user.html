@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User management system</title>
+</head>
+<body>
+<div class="container">
+    <h1> User Management System</h1>
+    <hr>
+    <h2> Update user</h2>
+
+    <form action="#" th:action="@{/saveUser}" th:object="${user}" method="POST">
+<!--<        hidden form field to handle update-->
+        <input type="hidden" th:field="*{id}"/>
+
+        <input type="text" th:field = "*{user_Name}" >
+
+        <input type="text" th:field = "*{email}" >
+
+        <input type="text" th:field = "*{email}" >
+
+        <input type="text" th:field = "*{password}" >
+
+        <input type="text" th:field = "*{age}" >
+
+        <button type="submit">Update User</button>
+
+
+
+
+    </form>
+    <a th:href="@{/users}">Back to Employee List</a>
+
+</div>
+</body>
+</html>

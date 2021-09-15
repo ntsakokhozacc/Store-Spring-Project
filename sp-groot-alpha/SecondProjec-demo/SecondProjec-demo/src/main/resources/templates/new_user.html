@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>User management System</title>
+</head>
+<body>
+    <div class="container">
+        <h1> User Management System</h1>
+        <hr>
+        <h2> Save user</h2>
+        <form action="#" th:action="@{/saveUser}" th:object="${user}" method="POST">
+            <input type="text" th:field = "*{user_Name}" placeholder="Please enter user username">
+
+            <input type="text" th:field = "*{email}" placeholder="Please enter user email">
+            <input type="text" th:field = "*{email}" placeholder="Please enter user email">
+
+            <input type="text" th:field = "*{password}" placeholder="Please enter user password">
+
+            <input type="text" th:field = "*{age}" placeholder="Please enter user age">
+
+            <button type="submit">Save user</button>
+
+
+
+
+        </form>
+
+    </div>
+</body>
+</html>

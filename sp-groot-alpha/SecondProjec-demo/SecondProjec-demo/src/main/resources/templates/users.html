@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div align="center">
+    <a th:href = "@{/showNewUserForm}">Register User</a>
+    <h1>List of Users</h1>
+    <table border="1">
+        <thead>
+        <tr>
+            <th>User-Name</th>
+            <th>User-Email</th>
+            <th>User-Age</th>
+            <th>Actions</th>
+        </tr>
+        </thead>
+        <tbody>
+        <div>
+        <tr th:each="users: ${listUsers} ">
+            <td th:text="${users.getUser_Name()}"></td>
+            <td th:text="${users.getEmail()}"></td>
+            <td th:text="${users.getAge()}"></td>
+            <td> <a th:href="@{/showFormForUpdate/{Id}(Id=${users.id})}">update</a>
+                <a th:href="@{/deleteUser/{Id}(Id=${users.id})}">delete</a>
+            </td>
+        </tr>
+        </div>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>
